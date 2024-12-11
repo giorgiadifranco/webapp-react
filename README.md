@@ -4,7 +4,7 @@
 
 1. Mettiamo su un nuovo progetto React aiutandoci con Vite
 2. Ripuliamo come sempre l’app da file e codice di esempio non necessari
-3. Installiamo il necessario: React Router, Bootstrap e Bootstrap icons (se volete utilzzarlo)
+3. Installiamo il necessario: React Router, Bootstrap e Bootstrap icons (se volete utilzzarlo) ✅
 
 ## MILESTONE 2
 
