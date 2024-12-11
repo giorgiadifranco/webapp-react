@@ -1,16 +1,12 @@
-import {Outlet, NavLink} from 'react-router-dom'
-
+import {Outlet} from 'react-router-dom'
+import Header from '../components/Header'
 export default function AppLayout() {
 
     return(
         <>
 
 
-            <header>
-                <nav>
-                <NavLink to='/'>Home</NavLink>
-                </nav>
-            </header>
+           <Header/>  
 
             <main>
                 <Outlet/>

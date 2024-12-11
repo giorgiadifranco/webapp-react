@@ -1,12 +1,12 @@
 ## WEBAPP-REACT
 
-## MILESTONE 1
+## MILESTONE 1 ✅
 
 1. Mettiamo su un nuovo progetto React aiutandoci con Vite
 2. Ripuliamo come sempre l’app da file e codice di esempio non necessari
-3. Installiamo il necessario: React Router, Bootstrap e Bootstrap icons (se volete utilzzarlo) ✅
+3. Installiamo il necessario: React Router, Bootstrap e Bootstrap icons (se volete utilzzarlo)
 
-## MILESTONE 2
+## MILESTONE 2 ✅
 
 1. Creiamo un layout di base per la nostra applicazione ed impostiamo le rotte per le diverse pagine.
 2. Creiamo 2 pagine:
