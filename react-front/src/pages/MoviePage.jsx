@@ -1,6 +1,8 @@
 
 export default function MoviePage(){
 
+    
+
     return(
         <>
             <h2>Movie Title</h2>
