@@ -4,9 +4,9 @@ export default function Header(){
 
     return(
 
-        <header>
+        <header className='bg-dark text-danger py-3 px-4 text-center'>
             <nav>
-            <NavLink to='/'>Home</NavLink>
+            <NavLink to='/' className='text-decoration-none text-danger'><strong><h1>Movies Rating</h1></strong></NavLink>
             </nav>
         </header>
 
