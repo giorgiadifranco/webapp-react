@@ -1,8 +1,35 @@
+import { useState, useEffect } from "react";
+import { useParams, Link } from "react-router-dom";
 import ReviewCard from '../components/ReviewCard.jsx'
 export default function MoviePage(){
 
+  const {id}  = useParams()
+  const [movie, setMovie] = useState(null);
+  
+ 
+
+  const single_movie_api_url = `http://localhost:3001/api/films/${id}`;
+  console.log(single_movie_api_url);
+  
+
+
+  useEffect(()=>{
+    fetch(single_movie_api_url)
+    .then(res=> res.json())
+    .then(data =>{
+      console.log(data);
+      
+     
+    })
+    .catch(err => console.error('Error fetching film:', err));
+  },[])
+
+  
+
+
+ /*
     const reviews = [
-        {
+       {
           id: 1,
           name: "Alice",
           vote: 8,
@@ -42,7 +69,7 @@ export default function MoviePage(){
           created_at: "2023-12-09T15:10:00Z",
           updated_at: "2023-12-10T17:25:00Z",
         },
-      ];
+      ];*/
       
 
     return(
@@ -50,7 +77,7 @@ export default function MoviePage(){
             <section className='review'>
                 <div className='container'>
 
-                    {reviews.map((review)=> <ReviewCard key={review.id} review={review} />)}
+                    { movie && movie?.review.map((review)=> <ReviewCard key={review.id} review={review} />)}
                 </div>
             
 

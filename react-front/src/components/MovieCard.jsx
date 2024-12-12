@@ -12,7 +12,7 @@ export default function MovieCard({ movie }){
                     
                     <p>Released: {movie.release_date}</p>
                 
-                
+                    <Link to={`/movie/${movie.id}`} className="btn btn-dark text-warning p-2" style={{ width: "110px" }}>Read more</Link>
 
 
             </div>

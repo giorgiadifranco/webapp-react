@@ -42,13 +42,6 @@ export default function MoviesHome(){
                 movies && movies.map(movie =>(<div className='col'key={movie.id}><MovieCard movie={movie}/> </div>) )
               }
               
-              
-              
-              
-            
-                      
-                    
-                
   
             </div>
           </div>

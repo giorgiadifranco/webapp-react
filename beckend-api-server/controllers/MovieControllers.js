@@ -35,14 +35,14 @@ function show (req, res){
             //console.log(results);
         
             // get all reviews associated to the book
-            connection.query(sql, [id], (err, results) => {
+            connection.query(sql, [id], (err, reviewsResults) => {
               if (err) return res.status(500).json({ err: err })
         
               //console.log('reviews', reviewsResults);
               const movie = {
                 ...results[0],
-               
-              }
+               reviews: reviewsResults
+              }              
         
               res.json(movie)
         
