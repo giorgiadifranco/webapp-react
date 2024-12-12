@@ -2,6 +2,17 @@ const express = require('express');
 const server = express();
 const filmsRouter = require('./routes/films')
 
+const cors = require ('cors');
+console.log(process.env.FRONT_ORIGIN);
+const corsOption =  { origin: process.env.FRONT_ORIGIN,
+    optionSuccessStatus: 200}
+    console.log(corsOption);
+
+    
+    
+
+    server.use(cors(corsOption))
+
 
 const PORT = process.env.PORT || 3001
 const HOST = process.env.HOST || "localhost"
