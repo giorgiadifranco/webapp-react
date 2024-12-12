@@ -38,9 +38,10 @@ export default function MoviesHome(){
                 <div className='container'>
                     <h2 className='p-5'>Best Rating Movies</h2>
                     <div className='row row-cols-3 p-5 g-5'>
-                     {/*
+
+                    {
                         movies.map(movie =>(<div className='col'key={movie.id}><MovieCard movie={movie}/> </div>) )
-                     */}
+                    }
                     </div>  
                 </div>
                 

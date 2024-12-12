@@ -3,7 +3,7 @@ const server = express();
 const filmsRouter = require('./routes/films')
 
 const cors = require ('cors');
-console.log(process.env.FRONT_ORIGIN);
+
 const corsOption =  { origin: process.env.FRONT_ORIGIN,
     optionSuccessStatus: 200}
     console.log(corsOption);
