@@ -18,6 +18,9 @@ export default function MoviePage(){
     .then(res=> res.json())
     .then(data =>{
       console.log(data);
+
+      setMovie(data)
+
       
      
     })
@@ -76,8 +79,8 @@ export default function MoviePage(){
         <>
             <section className='review'>
                 <div className='container'>
-
-                    { movie && movie?.review.map((review)=> <ReviewCard key={review.id} review={review} />)}
+                  { movie && movie?.reviews.map((review)=> <ReviewCard key={review.id} review={review} />)}
+                    
                 </div>
             
 
@@ -87,3 +90,4 @@ export default function MoviePage(){
 
     )
 }
+/**/
