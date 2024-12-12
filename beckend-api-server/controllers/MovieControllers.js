@@ -35,6 +35,7 @@ function show (req, res){
             //console.log(results);
         
             // get all reviews associated to the book
+            const sql = `SELECT * FROM reviews WHERE movie_id = ?`;
             connection.query(sql, [id], (err, reviewsResults) => {
               if (err) return res.status(500).json({ err: err })
         
