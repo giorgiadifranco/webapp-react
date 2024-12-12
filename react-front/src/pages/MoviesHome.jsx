@@ -19,8 +19,8 @@ export default function MoviesHome(){
       return res.json();
     })
     .then(data=> {
-      console.log(data);
-      setMovies(data);
+      console.log(data.movies);
+      setMovies(data.movies);
       
       
     }).catch(err => console.log(err))
@@ -33,20 +33,26 @@ export default function MoviesHome(){
     return(
         <>  
         
-            <section className='d-flex justify-content-around'>
-
-                <div className='container'>
-                    <h2 className='p-5'>Best Rating Movies</h2>
-                    <div className='row row-cols-3 p-5 g-5'>
-
-                    {
-                        movies.map(movie =>(<div className='col'key={movie.id}><MovieCard movie={movie}/> </div>) )
-                    }
-                    </div>  
-                </div>
+          <section className='d-flex justify-content-around'>
+          <div className='container'>
+            <h2 className='p-5'>Best Rating Movies</h2>
+            <div className='row row-cols-3 p-5 g-5'>
+              
+              {
+                movies && movies.map(movie =>(<div className='col'key={movie.id}><MovieCard movie={movie}/> </div>) )
+              }
+              
+              
+              
+              
+            
+                      
+                    
                 
-                  
-            </section>
+  
+            </div>
+          </div>
+        </section>
         </>
     )
 }
