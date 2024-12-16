@@ -9,8 +9,6 @@ export default function ReviewFormCard(movie_id, success, handleSuccess){
 
     function handleFormSubmit(e){
 
-         
-
         e.preventDefault()
         console.log('here');
         
@@ -20,15 +18,19 @@ export default function ReviewFormCard(movie_id, success, handleSuccess){
     return (
 
         <>
-            <h3>Scrivi adesso la tua recensione!</h3>
-
+            
             <div className='container'>
-                <div className="card">
+                <div className="card m-4">
                     <div className="card-body">
-
+                        
                         <form onSubmit={handleFormSubmit}>
-                            <iput name="username" type="text" className="form-control" placeholder="name" value={username} onChange={(e)=> setUsername(e.target.username)} />
+                        <div className="mb-3">
+                            <iput name="username" id="usarname" type="text" className="form-control" placeholder="name" value={username} onChange={(e)=> setUsername(e.target.username)} />
+                        </div>
 
+                        <div className="mb-3">
+                            <textarea name="review" id="review" value={review} onChange={(e)=> setReview(e.target.review)}></textarea>
+                        </div>
                         </form>
                     </div>
                 </div>
