@@ -55,7 +55,23 @@ function show (req, res){
 
 }
 
+function review(req, res) {
+  const id = req.params.id
+  const body = req.body
+
+  console.log(id, body);
+
+  req.send('done')
+  
+
+}
+
+
+
+
+
 module.exports = {
     index,
-    show
+    show,
+    review
 }

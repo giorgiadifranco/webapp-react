@@ -9,9 +9,9 @@ const corsOption =  { origin: process.env.FRONT_ORIGIN,
     console.log(corsOption);
 
     
-    
+server.use(express.json())
 
-    server.use(cors(corsOption))
+server.use(cors(corsOption))
 
 
 const PORT = process.env.PORT || 3001
