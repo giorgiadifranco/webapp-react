@@ -73,7 +73,7 @@ export default function ReviewFormCard({movie_id, success, }){
                         <div className="rating mb-3 text-warning">
                             {[1, 2, 3, 4, 5].map(n => <i key={n} className={`bi bi-star${n <= rating ? '-fill' : ''} `} onClick={() => setRating(n)}></i>)}
                         </div>    
-                        
+
                         <div className="mb-3">
                             <p>Name</p>
                             <input name="username" id="usarname" type="text" className="form-control" placeholder="name" value={username} onChange={(e)=> setUsername(e.target.value)} />
@@ -85,7 +85,7 @@ export default function ReviewFormCard({movie_id, success, }){
                             <textarea  className='w-100'name="review" id="review" value={review} onChange={(e)=> setReview(e.target.value)}></textarea>
                         </div>
 
-                        <button type="submit" className="btn btn-dark"><strong>Send</strong></button>
+                        <button type="submit" className="btn btn-dark "><strong>Send</strong></button>
                         </form>
                     </div>
                 </div>

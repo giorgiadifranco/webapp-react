@@ -82,7 +82,7 @@ export default function MoviePage(){
             <section className='review'>
                 <div className='container'>
 
-                  <button><ReviewFormCard movie_id={id} /></button>
+                  <btn><ReviewFormCard movie_id={id} /></btn>
                   { movie && movie?.reviews.map((review)=> <ReviewCard key={review.id} review={review} />)}
                     
                 </div>
