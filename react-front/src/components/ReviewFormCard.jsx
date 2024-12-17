@@ -1,7 +1,7 @@
 
 import { useState } from "react"
 
-export default function ReviewFormCard(movie_id, success, handleSuccess){
+export default function ReviewFormCard({movie_id, success, }){
 
     const [username, setUsername] = useState(' ')
     const [rating, setRating] = useState('')
@@ -23,7 +23,7 @@ export default function ReviewFormCard(movie_id, success, handleSuccess){
         }
         console.log(formData);
 
-        //noi dobbiamo comunicare con il server i valori dell'oggetto formData
+        // comunicare con il server i valori dell'oggetto formData
         const base_movie_rating_form = `http://localhost:3001/api/films/${movie_id}/review`
         console.log(base_movie_rating_form);
         
@@ -38,13 +38,15 @@ export default function ReviewFormCard(movie_id, success, handleSuccess){
               console.log(data);
     
               if (data.success) {
-                handleSuccess('Thanks for your review')
+                console.log('Thanks for your review')
     
     
                 // reset the form fields
                 setUsername('')
                 setReview('')
                 setRating(0)
+
+                window.location.reload()
     
                  
               }
