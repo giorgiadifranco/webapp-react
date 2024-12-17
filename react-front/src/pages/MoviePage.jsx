@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { useParams, Link } from "react-router-dom";
 import ReviewCard from '../components/ReviewCard.jsx'
+import ReviewFormCard from "../components/ReviewFormCard.jsx"; '../components/ReviewFormCard.jsx'
+
 export default function MoviePage(){
 
   const {id}  = useParams()
@@ -79,6 +81,8 @@ export default function MoviePage(){
         <>
             <section className='review'>
                 <div className='container'>
+
+                  <btn><ReviewFormCard movie_id={id} /></btn>
                   { movie && movie?.reviews.map((review)=> <ReviewCard key={review.id} review={review} />)}
                     
                 </div>
