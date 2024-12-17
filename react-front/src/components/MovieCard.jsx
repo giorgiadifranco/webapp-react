@@ -1,16 +1,16 @@
 import {Link} from 'react-router-dom'
-export default function MovieCard({ movie }){
+export default function MovieCard({movie}){
 
     return(
 
         <>
             <div className='card bg-dark text-white p-3'>
-                <p><strong>Rating </strong> {movie.vote}</p>
-                <h3 className='title'>{movie.title}</h3>
+                
+                <h3 className='title'><strong>{movie.title}</strong></h3>
                 <p className='text'>{movie.director}</p>  
-                    <p>{movie.description}</p>
+                    <p>#{movie.genre}</p>
                     
-                    <p>Released: {movie.release_date}</p>
+                    <p>{movie.abstract}</p>
                 
                     <Link to={`/movie/${movie.id}`} className="btn btn-dark text-warning p-2" style={{ width: "110px" }}>Read more</Link>
 
@@ -23,4 +23,3 @@ export default function MovieCard({ movie }){
 
 }
 
-/*<Link to={`/movie/${movie.id}`} className="btn btn-dark text-warning p-2" style={{ width: "110px" }}>Read more</Link>*/
