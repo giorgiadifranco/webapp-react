@@ -75,7 +75,7 @@ function review(req, res) {
   console.log("Data recensione:", reviewDate);
 
   // Eseguire la query
-  
+
   const sql = "INSERT INTO `reviews` SET name=?, text=?, vote=?, movie_id=?, created_at=?";
   
   connection.query(sql, [username, review, vote, movie_id, reviewDate], (err, result) => {
@@ -88,31 +88,7 @@ function review(req, res) {
 }
 
 
-/*function review(req, res) {
-  const movie_id = Number(req.params.id)
-  const {username, review, vote} = req.body
-  const now = new Date()
-  const reviewDate = `${now.getFullYear()} -${now.getMonth()}-${now.getDate()}`
-  console.log(reviewDate);
-  
-  const sql = "INSERT INTO `reviews` SET name=?, text=?, vote=?, movie_id=?, created_at=?"
 
-  connection.query(sql, [username, review, vote, movie_id, reviewDate], (err, result) => {
-
-    console.log(err);
-    
-
-    if (err) return res.status(500).json({ error: err })
-    return res.status(201).json({ success: true })
-  })
-
-
-  console.log(id, body);
-
-  res.send('done')
-  
-
-}*/
 
 
 
