@@ -55,8 +55,41 @@ function show (req, res){
 
 }
 
+
 function review(req, res) {
-  const movie_id = req.params.id
+  // Convertire id del film in un numero
+  const movie_id = Number(req.params.id); // Usa Number() per la conversione
+    if (isNaN(movie_id)) {
+      return res.status(400).json({ error: "ID del film non valido" });
+    }
+
+  // Estrarre i dati dal corpo della richiesta
+  const { username, review, vote } = req.body;
+    if (!username || !review || !vote) {
+      return res.status(400).json({ error: "Tutti i campi sono obbligatori" });
+    }
+
+  // data
+  const now = new Date();
+  const reviewDate = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
+  console.log("Data recensione:", reviewDate);
+
+  // Eseguire la query
+  
+  const sql = "INSERT INTO `reviews` SET name=?, text=?, vote=?, movie_id=?, created_at=?";
+  
+  connection.query(sql, [username, review, vote, movie_id, reviewDate], (err, result) => {
+    if (err) {
+      console.error("Errore durante l'inserimento:", err);
+      return res.status(500).json({ error: "Errore interno del server" });
+    }
+    return res.status(201).json({ success: true, id: result.insertId });
+  });
+}
+
+
+/*function review(req, res) {
+  const movie_id = Number(req.params.id)
   const {username, review, vote} = req.body
   const now = new Date()
   const reviewDate = `${now.getFullYear()} -${now.getMonth()}-${now.getDate()}`
@@ -79,7 +112,7 @@ function review(req, res) {
   res.send('done')
   
 
-}
+}*/
 
 
 
